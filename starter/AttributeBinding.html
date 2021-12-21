@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="http://192.168.107.29:8098"></script>
+</head>
+<body>
+	<div id="bind-attibute">
+		<span v-bind:title="message">
+			여기에 마우스를 올리고 잠시 기다리면 제목이 동적으로 바뀝니다.
+		</span>
+	</div>
+
+
+	<script src="https://unpkg.com/vue@next"></script>
+	<script>
+		const AttributeBinding = {
+			data() {
+				return {
+					message: '이 페이지를 다음시간에 열었습니다.' + new Date().toLocaleString()
+				}
+			},
+		}
+
+		Vue.createApp(AttributeBinding).mount('#bind-attibute')
+	</script>
+</body>
+</html>
